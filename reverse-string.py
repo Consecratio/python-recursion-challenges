@@ -15,3 +15,13 @@ output: "zyxwvutsrqponmlkjihgfedcba"
 input: reverse("computer")
 output: "computer"
 '''
+
+def reverse(word, newWord = "", num = 0):
+    if num == len(word): return newWord
+
+    newWord = word[num] + newWord
+    
+    return reverse(word, newWord, num + 1)
+
+
+print(reverse(reverse("computer")))

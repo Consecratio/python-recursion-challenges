@@ -12,3 +12,14 @@ Output: 4
 Input: 'SpamAndEggs'
 Output: 8
 '''
+
+vowels = ["a", "e", "i", "o", "u"]
+
+def count_const(word, count = 0):
+    if word == "": return count
+
+    if word[0].lower() not in vowels: count += 1
+
+    return count_const(word[1:], count)
+
+print(count_const('SpamAndEggs'))
